@@ -842,10 +842,39 @@ section #title .credits.right {
   }
 
   section {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   nav {
     display: none;
   }
+}
+
+
+body {
+    background-image: url("../images/bg1.png");
+	background-repeat: repeat;
+}
+
+.menuTitle
+{
+	text-align: center;
+	color: #d50458;
+	padding-left: 20px;
+	padding-top: 30px;
+	font-size: 200%;
+}
+
+.centerSection
+{
+	margin-top: -100px;
+	margin-bottom: -100px;
+	background-color:rgba(23, 0, 122, 0.3);
+}
+
+.centerText
+{
+	
+	margin-left:32px;
+	margin-right:32px;
 }
