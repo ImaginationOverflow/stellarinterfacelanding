@@ -580,7 +580,7 @@ h3 {
 }
 
 a {
-  color: #ffcc00;
+  color: #d50458;
   font-weight: 400;
   text-decoration: none;
 }
@@ -782,7 +782,7 @@ dt {
 
 section {
   max-width: 650px;
-  padding: 30px 0px 50px 0px;
+  padding: 0px 0px 50px 0px;
   margin: 20px 0;
   margin-top: 70px;
 }
@@ -852,6 +852,7 @@ section #title .credits.right {
 
 
 body {
+	background-color:rgba(0, 0, 0, 0);
     background-image: url("../images/bg1.png");
 	background-repeat: repeat;
 }
@@ -868,7 +869,6 @@ body {
 .centerSection
 {
 	margin-top: -100px;
-	margin-bottom: -100px;
 	background-color:rgba(23, 0, 122, 0.3);
 }
 
@@ -877,4 +877,27 @@ body {
 	
 	margin-left:32px;
 	margin-right:32px;
+}
+
+.social {
+  margin-top: 20px;
+}
+.social a 
+{
+	  margin-right: 20px;
+}
+
+#manPost
+{
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+#footer
+{
+	margin-top:0px;
+	padding: 0px;
+	text-align: center;
+
+	
 }
