@@ -848,6 +848,7 @@ section #title .credits.right {
   nav {
     display: none;
   }
+
 }
 
 
@@ -863,7 +864,12 @@ body {
 	color: #d50458;
 	padding-left: 20px;
 	padding-top: 30px;
-	font-size: 200%;
+	font-size: 170%;
+}
+
+#logo
+{
+	margin-top:-60px;
 }
 
 .centerSection
@@ -880,11 +886,13 @@ body {
 }
 
 .social {
-  margin-top: 20px;
+	margin-top: 20px;
+	width: 100%;
+	padding: 10px;
 }
 .social a 
 {
-	  margin-right: 20px;
+	margin-right: 20px;
 }
 
 #manPost
@@ -900,4 +908,72 @@ body {
 	text-align: center;
 
 	
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 32px; height: 0; overflow: hidden;
+	margin-left: 32px;
+	margin-right:32px;
+	margin-bottom: 15px;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media print, screen and (max-width: 720px) {
+	#logo
+	{
+		margin-top:0px;
+	}
+}
+@media print, screen and (max-width: 480px) 
+{
+	#logo
+	{
+		margin-top:0px;
+	}
+}
+
+@media print, screen and (max-width: 380px) 
+{
+	#logo
+	{
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+	
+	.menuTitle
+	{
+		text-align: center;
+		color: #d50458;
+		padding-left: 8px;
+		padding-top: 20px;
+		font-size: 120%;
+		font-weight: 600;
+	}
+	
+	#topMenu
+	{
+		margin-top: 10px;
+	}
+	
+	.menuTitle a
+	{
+		font-weight: 600;
+	}
+	
+	.social 
+	{
+		margin-top: 5px;
+	}
 }
