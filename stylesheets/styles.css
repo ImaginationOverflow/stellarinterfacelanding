@@ -791,6 +791,7 @@ section #title {
   outline: none;
   margin: 0 0 50px 0;
   padding: 0 0 5px 0;
+  text-align:center;
 }
 section #title h1 {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -863,8 +864,13 @@ body {
 	text-align: center;
 	color: #d50458;
 	padding-left: 20px;
-	padding-top: 30px;
+	padding-top: 10px;
 	font-size: 170%;
+}
+
+#topMenu
+{
+	margin-top: 10px;
 }
 
 #logo
@@ -874,19 +880,24 @@ body {
 
 .centerSection
 {
-	margin-top: -100px;
+	margin-top: -120px;
 	background-color:rgba(23, 0, 122, 0.3);
 }
 
-.centerText
+.newsText
 {
-	
+	word-wrap: break-word;
+
+}
+
+.centerText, .newsText
+{
 	margin-left:32px;
 	margin-right:32px;
 }
 
 .social {
-	margin-top: 20px;
+	margin-top: 10px;
 	width: 100%;
 	padding: 10px;
 }

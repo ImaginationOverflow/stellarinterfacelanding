@@ -22,14 +22,14 @@ function loadNews()
 				if(val.message.length > maxChars)
 					text+="...";
 				
-				items.push( "<p>" + val.created_time + "'</p>" + 
-				"<p>"+text + "</p>"+
+				items.push( "<p class=\"newsText\">" + val.created_time + "'</p>" + 
+				"<p class=\"newsText\">"+text + "</p>"+
 				"<p><a href=\""+ link   + "\"> more </a> </p>"
 				);
 			}
 		});
 	 
-		$( "<ul/>", 
+		$( "<div/>", 
 		{
 			"class": "my-new-list",    html: items.join( "" )
 		}).appendTo( "#news" );
