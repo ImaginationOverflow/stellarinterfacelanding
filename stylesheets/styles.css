@@ -531,7 +531,7 @@ table {
 body {
   padding: 0px 0 20px 0px;
   margin: 0px;
-  font: 14px/1.5 'VT323',"OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.5 'Source Code Pro',"OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #f0e7d5;
   font-weight: normal;
   background: #252525;
@@ -547,7 +547,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #e8e8e8;
   margin: 0 0 10px;
-  font-family: 'VT323','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Source Code Pro','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -574,7 +574,7 @@ h4, h5, h6 {
 h3 {
   font-size: 18px;
   line-height: 24px;
-  font-family: 'VT323','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: 'Source Code Pro','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
   color: #b6b6b6;
 }
@@ -600,7 +600,7 @@ ul {
 }
 
 strong {
-  font-family: 'VT323','OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: 'Source Code Pro','OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
 }
 
@@ -670,7 +670,7 @@ th {
   padding: 5px 10px;
   border-bottom: 1px solid #434343;
   color: #b6b6b6;
-  font-family: 'VT323','OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: 'Source Code Pro','OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
 }
 
@@ -690,7 +690,7 @@ hr {
 
 dt {
   color: #F0E7D5;
-  font-family: 'VT323','OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: 'Source Code Pro','OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
 }
 
@@ -716,7 +716,7 @@ dt {
   margin: 6px auto;
 }
 #header nav li {
-  font-family: 'VT323','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Source Code Pro','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   list-style: none;
   display: inline;
@@ -794,7 +794,7 @@ section #title {
   text-align:center;
 }
 section #title h1 {
-  font-family: 'VT323','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Source Code Pro','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 40px;
   text-align: center;
@@ -802,14 +802,14 @@ section #title h1 {
 }
 section #title p {
   color: #d7cfbe;
-  font-family: 'VT323','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Source Code Pro','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 18px;
   text-align: center;
 }
 section #title .credits {
   font-size: 11px;
-  font-family: 'VT323','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Source Code Pro','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #696969;
   margin-top: -10px;
@@ -859,7 +859,8 @@ body {
 	background-repeat: repeat;
 }
 
-.menuTitle
+
+.menuTitle,.contentTitle
 {
 	text-align: center;
 	color: #d50458;
@@ -867,6 +868,15 @@ body {
 	padding-top: 10px;
 	font-size: 170%;
 }
+
+.contentTitle
+{
+	color: #4842b7;
+	padding-left: 0px;
+}
+
+
+
 
 #topMenu
 {
@@ -887,13 +897,19 @@ body {
 .newsText
 {
 	word-wrap: break-word;
+	margin-bottom: 0px;
+	
+}
 
+.newsDate
+{
+	color: #4842b7;
+	margin-bottom: 0px;
 }
 
 .centerText, .newsText
 {
-	margin-left:32px;
-	margin-right:32px;
+
 }
 
 .social {
@@ -906,11 +922,19 @@ body {
 	margin-right: 20px;
 }
 
-#manPost
+
+#content
 {
 	padding-top: 32px;
+	margin-left:32px;
+	margin-right:32px;
+}
+
+#manPost
+{
 	padding-bottom: 32px;
 }
+
 
 #footer
 {
