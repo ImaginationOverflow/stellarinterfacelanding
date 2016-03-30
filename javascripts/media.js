@@ -1,4 +1,4 @@
-var columnWidth = 150;
+var columnWidth = 195;
 
 
 window.onload = function() {
