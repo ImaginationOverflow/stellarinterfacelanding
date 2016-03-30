@@ -97,6 +97,10 @@ function publishFolder(folder, imagesPerRow)
 		columnWidth: columnWidth,
 		fitWidth: true,
 		itemSelector: "."+folder.name,
+		zoom: 
+		{
+			enabled: true,
+		}
 	});
 	//*/
 }
