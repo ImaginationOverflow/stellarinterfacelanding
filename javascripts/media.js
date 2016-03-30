@@ -1,5 +1,6 @@
-var columnWidth = 195;
-
+var columnWidth = 191;
+var gutter = 5;
+var placeholderSize = 650;
 
 window.onload = function() {
   loadMedia();
@@ -29,7 +30,7 @@ function loadMedia()
 
 		$.each(items, function(key,item)
 		{
-			if(!('folder' in item))	
+			if(!('folder' in item) || item.folder.childCount == 0)	
 				return;
 			
 			var mediaFolder = { name:item.name, id:item.id };
@@ -51,7 +52,7 @@ function getFolderImages(folder)
 	{
 		$.each(items, function(key,item)
 		{
-			if(!('image' in item))	
+			if(!('image' in item) )	
 				return;
 			
 			var photo = 
@@ -69,42 +70,66 @@ function getFolderImages(folder)
 	});
 }
 
-function publishFolder(folder)
+function publishFolder(folder, imagesPerRow)
 {
 	var content = $("<div/>");
 	
-	$("<div>" + folder.name + "</div>").appendTo(content);
 	
 	folder.photos.forEach(function(photo)
 	{
-		if(photo.width > columnWidth)
-		{
-			photo.height/=photo.width /columnWidth ;
-			photo.width = columnWidth;
-		}
+		var img = creteImage(photo,folder,true);
 		
-		var img  = $('<img />', 
-		{ 
-			src: photo.url,
-			alt: photo.name,
-			"height":photo.height,
-			"width":photo.width
-		})
+		var div = $("<div/>", {"class":folder.name+ " gridImage" });
 		
-		var div = $("<div/>", {"class":folder.name });
 		img.appendTo(div);
+		
 		div.appendTo(content);
 	});
 	
 	
+	$("<div>/", {"class":"contentTitle", html:folder.name}).appendTo("#mediaContent");
 	
 	content.appendTo("#mediaContent");
 	//
 	content.masonry(
 	{
+		gutter:5,
 		columnWidth: columnWidth,
-
-	  itemSelector: "."+folder.name,
+		fitWidth: true,
+		itemSelector: "."+folder.name,
 	});
 	//*/
+}
+
+function creteImage(photo, folder, resize)
+{
+	var height = photo.height;
+	var width = photo.width;
+	
+	if(resize && photo.width > columnWidth)
+	{
+		height/=photo.width /columnWidth ;
+		width = columnWidth;
+	}
+		
+	var img  = $('<img />', 
+	{ 
+		src: photo.url,
+		alt: photo.name,
+		"height":height,
+		"width":width
+	});
+	
+	
+	var fullScreenImg = $("<a/>", {"href":photo.url});
+	
+	img.appendTo(fullScreenImg);
+	
+	fullScreenImg.magnificPopup(
+	{
+		type: 'image',
+		closeOnContentClick:true,
+
+	});
+	return fullScreenImg;
 }

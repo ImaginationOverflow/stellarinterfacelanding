@@ -873,6 +873,7 @@ body {
 {
 	color: #4842b7;
 	padding-left: 0px;
+	text-align:left;
 }
 
 
@@ -1023,4 +1024,9 @@ body {
 	margin: auto;
     width: 90%;
     padding: 10px;
+}
+
+.gridImage
+{
+	margin-bottom:5px;
 }
