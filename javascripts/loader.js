@@ -63,6 +63,6 @@ function loadNews()
 		$( "<div/>", 
 		{
 			"class": "my-new-list",    html: items.join( "" )
-		}).appendTo( "#news" );
+		}).appendTo( "#newsContainer" );
 	});
 }
