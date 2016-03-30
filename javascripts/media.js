@@ -1,3 +1,5 @@
+var columnWidth = 150;
+
 
 window.onload = function() {
   loadMedia();
@@ -49,10 +51,17 @@ function getFolderImages(folder)
 	{
 		$.each(items, function(key,item)
 		{
-			if(!('photo' in item))	
+			if(!('image' in item))	
 				return;
 			
-			var photo = { name:item.name, id:item.id, url:item["@content.downloadUrl"] };
+			var photo = 
+			{ 
+				name:item.name, 
+				id:item.id, 
+				url:item["@content.downloadUrl"],
+				height:item.image.height,
+				width:item.image.width
+			};
 			folder.photos.push(photo);
 		});	
 		
@@ -68,12 +77,34 @@ function publishFolder(folder)
 	
 	folder.photos.forEach(function(photo)
 	{
-		$('<img />', 
+		if(photo.width > columnWidth)
+		{
+			photo.height/=photo.width /columnWidth ;
+			photo.width = columnWidth;
+		}
+		
+		var img  = $('<img />', 
 		{ 
-		  src: photo.url,
-		  alt: photo.name
-}		).appendTo(content);
+			src: photo.url,
+			alt: photo.name,
+			"height":photo.height,
+			"width":photo.width
+		})
+		
+		var div = $("<div/>", {"class":folder.name });
+		img.appendTo(div);
+		div.appendTo(content);
 	});
 	
-	content.appendTo("#content");
+	
+	
+	content.appendTo("#mediaContent");
+	//
+	content.masonry(
+	{
+		columnWidth: columnWidth,
+
+	  itemSelector: "."+folder.name,
+	});
+	//*/
 }

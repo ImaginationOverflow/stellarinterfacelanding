@@ -1011,3 +1011,14 @@ body {
 		margin-top: 5px;
 	}
 }
+
+.halfsize {
+    -moz-transform:scale(0.5);
+    -webkit-transform:scale(0.5);
+    transform:scale(0.5);
+}
+
+#mediaContent
+{
+	max-width:none;
+}
