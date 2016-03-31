@@ -867,6 +867,7 @@ body {
 	padding-left: 20px;
 	padding-top: 10px;
 	font-size: 170%;
+	text-transform: uppercase;
 }
 
 .contentTitle
@@ -1046,7 +1047,7 @@ body {
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
-	left:-10%;
+	left:-30%;
 	overflow-x: hidden;
     overflow-y: hidden;
 }

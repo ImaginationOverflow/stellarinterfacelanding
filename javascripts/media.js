@@ -28,6 +28,8 @@ function loadMedia()
 	getFolderChildren(rootFolderId, function(items)
 	{
 
+		items.sort(function(a, b){return b.name.localeCompare(a.name);})
+		
 		$.each(items, function(key,item)
 		{
 			if(!('folder' in item) || item.folder.childCount == 0)	
