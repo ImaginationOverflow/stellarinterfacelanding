@@ -1030,3 +1030,35 @@ body {
 {
 	margin-bottom:5px;
 }
+
+
+#ship {
+    width: 60px;
+    height: 88px;
+    position: fixed;
+    -webkit-animation-name: toSocial; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 6s; /* Chrome, Safari, Opera */
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-name: toSocial;
+    animation-duration: 6s;
+    animation-delay: 1s;
+	background-image: url("../images/corvette.png");
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+	left:-10%;
+	overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes toSocial {
+    0%   {left:-20%; top:10%;}
+    100% { left:200%; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes toSocial {
+    0%   {left:-10%; top:10%;}
+    100% { left:200%; top:0px;}
+}
