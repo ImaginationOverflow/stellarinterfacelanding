@@ -49,6 +49,9 @@ function getFolderImages(folder)
 {
 
 	folder.photos = [];
+	var folderView = $("<div>/", {"class":"contentTitle", html:folder.name});
+	
+	folderView.appendTo("#mediaContent");
 	
 	getFolderChildren(folder.id, function(items)
 	{
@@ -68,18 +71,18 @@ function getFolderImages(folder)
 			folder.photos.push(photo);
 		});	
 		
-		publishFolder(folder);
+		publishFolder(folder,folderView);
 	});
 }
 
-function publishFolder(folder, imagesPerRow)
+function publishFolder(folder, folderView)
 {
 	var content = $("<div/>");
 	
 	
 	folder.photos.forEach(function(photo)
 	{
-		var img = creteImage(photo,folder,true);
+		var img = createImage(photo,folder,true);
 		
 		var div = $("<div/>", {"class":folder.name+ " gridImage" });
 		
@@ -89,9 +92,9 @@ function publishFolder(folder, imagesPerRow)
 	});
 	
 	
-	$("<div>/", {"class":"contentTitle", html:folder.name}).appendTo("#mediaContent");
 	
-	content.appendTo("#mediaContent");
+	
+	content.insertAfter(folderView);
 	//
 	content.masonry(
 	{
@@ -107,7 +110,7 @@ function publishFolder(folder, imagesPerRow)
 	//*/
 }
 
-function creteImage(photo, folder, resize)
+function createImage(photo, folder, resize)
 {
 	var height = photo.height;
 	var width = photo.width;
