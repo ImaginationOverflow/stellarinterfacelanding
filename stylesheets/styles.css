@@ -1063,3 +1063,17 @@ body {
     0%   {left:-10%; top:10%;}
     100% { left:200%; top:0px;}
 }
+
+.contentTitle > a
+{
+  text-decoration: none;
+  color: #6959ac;
+  font-size: 100%;
+  padding-left:10px;
+}
+
+.mediaMenu
+{
+	margin-top:0px;
+	margin-bottom:10px;
+}
