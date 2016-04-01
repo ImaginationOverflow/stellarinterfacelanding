@@ -88,6 +88,6 @@ function loadNews()
 		}).appendTo( "#newsContainer" );
 		
 		
-		attachClickEvent(".fbLink", function(elem){return elem.href;});
+		attachClickEvent(".fbLink", function(elem){return elem.href;}, function(elem){return 'news';});
 	});
 }
