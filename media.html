@@ -56,23 +56,24 @@
 				<span class="menuTitle"> <a href="http://stellarinterface.com#news">NEWS</a></span>			
 				<span class="menuTitle"> <a href="/media">MEDIA</a></span>			
 				<span class="menuTitle"> <a href="http://blog.imaginationoverflow.com/tagged/StellarInterface">BLOG</a></span>
-				<span class="menuTitle">CONTACT</span>
+				<span class="menuTitle"> <a href="mailto:stellarinterface@imaginationoverflow.com">Contact</a></span>
 			</div>
-			<div class="social">
-				 <!--<a href="https://www.steamspy.com"><img src="images/steam.png"/></a>-->
-				<a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw"><img src="images/youtube.png"/>    </a>
-				<a href="https://www.facebook.com/stellarinterface"><img src="images/fb.png"/>         </a>
-				<a href="https://twitter.com/stellar_net"><img src="images/twitter.png"/>		</a>
-				<a href="https://plus.google.com/105756639144658056270"><img src="images/g+.png"/>         </a>
+			<div class="social" id="socialLinks">
+				 <!--<a href="https://www.steamspy.com" id="steam"><img src="images/steam.png"/></a>-->
+				<a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw" id="youtube"><img src="images/youtube.png"/>    </a>
+				<a href="https://www.facebook.com/stellarinterface" id="facebook"><img src="images/fb.png"/>         </a>
+				<a href="https://twitter.com/stellar_net" id="twitter"><img src="images/twitter.png"/>		</a>
+				<a href="https://plus.google.com/105756639144658056270" id="google+"><img src="images/g+.png"/>         </a>
+				<!--<a href="https://plus.google.com/105756639144658056270" id="reddit"><img src="images/g+.png"/>         </a>-->
 				
 			</div>
 			<div >
-		<div class = "mediaMenu" align="middle">
+		<div class = "mediaMenu" id="mediaMenuContent" align="middle">
 				 <!--<a href="https://www.steamspy.com"><img src="images/steam.png"/></a>-->
-				<span class="contentTitle"> <a href="#GIFs">GIFs</a></span>		
-				<span class="contentTitle"> <a href="#Banners">Banners</a></span>		
+				<span class="contentTitle"> <a href="#GIFs"  id="gifs">GIFs</a></span>		
+				<span class="contentTitle"> <a href="#Banners"  id="banners">Banners</a></span>		
 				
-				<span class="contentTitle"> <a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw">Videos</a></span>	
+				<span class="contentTitle"> <a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw"  id="videos">Videos</a></span>	
 				</br>
 				<span class="contentTitle" style="font-size:190%" ><a id="PressKit" href=""  download="PressKit"> Press Kit</a></span>		
 			</div>
@@ -121,6 +122,55 @@
   ga('send', 'pageview');
 
 </script>
-	</body>
 
-  </html>
+
+<script>
+	function registerLogHooks()
+	{
+		
+		attachClickEvent("#topMenu span > a");
+		attachClickEvent("#socialLinks a");
+		
+		attachClickEvent("#mediaMenuContent span > a");
+		
+		
+		
+	}
+
+	function attachClickEvent(selector, extractor,eventNameExtractor)
+	{
+		$(selector).each(function(idx,elem)
+		{
+			$(elem).click(function(elem){logClick(elem,extractor,eventNameExtractor);});
+		});
+	}
+	
+	function logClick(clickData, extractName, eventNameExtractor)
+	{
+	
+		var name = clickData.currentTarget.innerText;
+		
+		if(extractName)
+		{
+			name = extractName(clickData.currentTarget);
+		}
+		
+		var eventName = 'click';
+		
+		if(eventNameExtractor)
+			eventName = eventNameExtractor(clickData.currentTarget);
+		
+		if((!name || /^\s*$/.test(name)))
+			name = clickData.currentTarget.id;
+			
+		ga('send', 'event', eventName, name, '');
+	}
+	
+	
+	
+	
+
+</script>
+</body>
+
+</html>

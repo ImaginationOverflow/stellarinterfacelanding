@@ -29,6 +29,7 @@
     <script src="javascripts/respond.js"></script>
 	<script src="javascripts/jquery-1.12.2.min.js"></script>
 	<script src="javascripts/loader.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -52,14 +53,15 @@
 				<span class="menuTitle"> <a href="#news">NEWS</a></span>			
 				<span class="menuTitle"> <a href="/media">MEDIA</a></span>			
 				<span class="menuTitle"> <a href="http://blog.imaginationoverflow.com/tagged/StellarInterface">BLOG</a></span>
-				<span class="menuTitle">CONTACT</span>
+				<span class="menuTitle"> <a href="mailto:stellarinterface@imaginationoverflow.com">Contact</a></span>
 			</div>
-			<div class="social">
-				<!--<a href="https://www.steamspy.com"><img src="images/steam.png"/></a>-->
-				<a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw"><img src="images/youtube.png"/>    </a>
-				<a href="https://www.facebook.com/stellarinterface"><img src="images/fb.png"/>         </a>
-				<a href="https://twitter.com/stellar_net"><img src="images/twitter.png"/>		</a>
-				<a href="https://plus.google.com/105756639144658056270"><img src="images/g+.png"/>         </a>
+			<div class="social" id="socialLinks">
+				 <!--<a href="https://www.steamspy.com" id="steam"><img src="images/steam.png"/></a>-->
+				<a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw" id="youtube"><img src="images/youtube.png"/>    </a>
+				<a href="https://www.facebook.com/stellarinterface" id="facebook"><img src="images/fb.png"/>         </a>
+				<a href="https://twitter.com/stellar_net" id="twitter"><img src="images/twitter.png"/>		</a>
+				<a href="https://plus.google.com/105756639144658056270" id="google+"><img src="images/g+.png"/>         </a>
+				<!--<a href="https://plus.google.com/105756639144658056270" id="reddit"><img src="images/g+.png"/>         </a>-->
 				
 			</div>
 		</div>
@@ -71,7 +73,7 @@
 	
 	<div id="manPost">
 		<div class="video-container">>
-			<iframe  width="560" height="315" src="https://www.youtube.com/embed/wmy0_0IkRFg" frameborder="0" allowfullscreen></iframe>
+			<iframe id="trailerVideo"  width="560" height="315" src="https://www.youtube.com/embed/wmy0_0IkRFg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 		</div>
 		
 		<p class="centerText">
@@ -123,6 +125,45 @@
 
   ga('create', 'UA-41424791-11', 'auto');
   ga('send', 'pageview');
+
+</script>
+<script>
+	function registerLogHooks()
+	{
+		
+		attachClickEvent("#topMenu span > a");
+		attachClickEvent("#socialLinks a");
+		
+		
+		
+		
+	}
+
+	function attachClickEvent(selector, extractor)
+	{
+		$(selector).each(function(idx,elem)
+		{
+			$(elem).click(function(elem){logClick(elem,extractor);});
+		});
+	}
+	
+	function logClick(clickData, extractName)
+	{
+	
+		var name = clickData.currentTarget.innerText;
+		
+		if(extractName)
+		{
+			name = extractName(clickData.currentTarget);
+		}
+		
+		if((!name || /^\s*$/.test(name)))
+			name = clickData.currentTarget.id;
+			
+		ga('send', 'event', 'click', name, '');
+	}
+	
+	
 
 </script>
 </div>

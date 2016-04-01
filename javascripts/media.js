@@ -2,9 +2,13 @@ var gutter = 5;
 var placeholderSize = 583;
 var mediaKitLink;
 
-window.onload = function() {
+window.onload = function() 
+{
   loadMedia();
-  //downloadMediaKit();
+  registerLogHooks();
+ 
+  
+  
 };
 
 function getUriFor(folderId)
@@ -67,6 +71,7 @@ function getFolderImages(folder)
 		if(folder.name == "PressKit")
 		{
 			HandleMediaKit(items);
+			folderView.remove();
 			return;
 		}
 		
@@ -112,6 +117,8 @@ function publishFolder(folder, folderView, nrOfImagesPerRow)
 	
 	var size = (placeholderSize - gutter * (nrOfImagesPerRow-1))/nrOfImagesPerRow;
 	
+	
+	
 	folder.photos.forEach(function(photo)
 	{
 		var img = createImage(photo,folder,true,size);
@@ -138,6 +145,18 @@ function publishFolder(folder, folderView, nrOfImagesPerRow)
 			enabled: true,
 		}
 	});
+	
+	attachClickEvent("."+folder.name+".gridImage" , 
+		function(elem)
+		{
+			var pic = $(elem).find("img")[0];
+			return pic.alt;
+		},
+		function(elem)
+		{
+			return 'mediaView';
+		}
+		);
 	//*/
 }
 
@@ -173,94 +192,3 @@ function createImage(photo, folder, resize, imageWidth)
 	});
 	return fullScreenImg;
 }
-
-function downloadMediaKit()
-{
-	$.post("", 
-	{
-		
-	}, function(result){
-        
-    });
-	
-	
-	$.ajax({
-		url: 'https://cid-55963bccc14a8ec4.users.storage.live.com/downloadfiles/V1/Zip?authkey=!AHSX3KI1pTAe6BU',
-		type: 'post',
-		data: {
-			resIds: "55963BCCC14A8EC4!219668",
-			authkey: "!AHSX3KI1pTAe6BU"
-		},
-		headers: {
-
-			//"Origin": "https://onedrive.live.com",
-			//"Referer": "https://onedrive.live.com",
-			"Access-Control-Allow-Origin":"*"
-		},
-		success: function (data) {
-			console.info(data);
-		}	
-	});
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.downloadFile = function (sUrl) {
-
-    //iOS devices do not support downloading. We have to inform user about this.
-    if (/(iP)/g.test(navigator.userAgent)) {
-        alert('Your device does not support files downloading. Please try again in desktop browser.');
-        return false;
-    }
-
-    //If in Chrome or Safari - download via virtual link click
-    if (window.downloadFile.isChrome || window.downloadFile.isSafari) {
-        //Creating new link node.
-        var link = document.createElement('a');
-        link.href = sUrl;
-
-        if (link.download !== undefined) {
-            //Set HTML5 download attribute. This will prevent file from opening if supported.
-            var fileName = sUrl.substring(sUrl.lastIndexOf('/') + 1, sUrl.length);
-            link.download = fileName;
-        }
-
-        //Dispatching click event.
-        if (document.createEvent) {
-            var e = document.createEvent('MouseEvents');
-            e.initEvent('click', true, true);
-            link.dispatchEvent(e);
-            return true;
-        }
-    }
-
-    // Force file download (whether supported by server).
-    if (sUrl.indexOf('?') === -1) {
-        sUrl += '?download';
-    }
-
-    window.open(sUrl, '_self');
-    return true;
-}
-
-window.downloadFile.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-window.downloadFile.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
