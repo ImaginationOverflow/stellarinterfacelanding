@@ -85,7 +85,7 @@ function loadNews()
 		$( "<div/>", 
 		{
 			"class": "my-new-list",    html: items.join( "" )
-		}).appendTo( "#newsContainer" );
+		}).appendTo( "#newsTextContainer" );
 		
 		
 		attachClickEvent(".fbLink", function(elem){return elem.href;}, function(elem){return 'news';});
