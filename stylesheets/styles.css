@@ -864,7 +864,7 @@ body {
 {
 	text-align: center;
 	color: #d50458;
-	padding-left: 20px;
+	padding-left: 10px;
 	padding-top: 10px;
 	font-size: 170%;
 	text-transform: uppercase;
@@ -1076,4 +1076,16 @@ body {
 {
 	margin-top:0px;
 	margin-bottom:10px;
+}
+
+.question
+{
+	font-weight: bold;
+	color: #d50458;
+}
+
+.answer
+{
+	
+	margin-top:-20px;
 }

@@ -25,11 +25,11 @@
     <title>StellarInterface</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <link rel="stylesheet" href="stylesheets/magnific-popup.css">
+	<link rel="stylesheet" href="stylesheets/magnific-popup-main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/respond.js"></script>
-	<script src="javascripts/jquery-1.12.2.min.js"></script>
-	<script src="javascripts/loader.js"></script>
-	<script src="https://www.youtube.com/iframe_api"></script>
+	<script src="javascripts/magnific-popup.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -40,9 +40,9 @@
   </head>
   <body>
      
-	<div id="ship"></div>
-	
+
     <div class="wrapper">
+	
 
 	
 	
@@ -50,7 +50,7 @@
         <div id="title" >
         <a href="http://stellarinterface.com"><img src="images/logo.png" id="logo"></a>
 			<div id="topMenu">
-				<span class="menuTitle"> <a href="#news">NEWS</a></span>			
+				<span class="menuTitle"> <a href="http://stellarinterface.com#news">NEWS</a></span>			
 				<span class="menuTitle"> <a href="/media">MEDIA</a></span>			
 				<span class="menuTitle"> <a href="http://blog.imaginationoverflow.com/tagged/StellarInterface">BLOG</a></span>
 				<span class="menuTitle"> <a href="/faq">faq</a></span>	
@@ -65,60 +65,54 @@
 				<a href="https://www.reddit.com/r/stellarinterface/" id="reddit"><img src="images/reddit.png"/>         </a>
 				
 			</div>
+			<div >
+		
+	</div>
 		</div>
-
+	
 	</section>
+	
 	<section class="centerSection">
 
 	<div id="content">
+		<p class="question">About</p>
+		<p class="answer">STELLAR INTERFACE is a rogue-like, permadeath space shooter with randomized perks, providing the player an unique experience every run!</p>
 	
-	<div id="manPost">
-		<div class="video-container">>
-			<iframe id="trailerVideo"  width="560" height="315" src="https://www.youtube.com/embed/wmy0_0IkRFg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-		</div>
+		<p class="question">On which platforms will the game be released?</p>
+		<p class="answer">Initially Windows, Linux and Mac via Steam. Console and Mobile support is on the pipeline.<p>
 		
-		<p class="centerText">
-		It's on! A space-shooter meets a rogue-like-ish game, and STELLAR INTERFACE is born.
-		</p>
-		<p class="centerText">
-		Run and explore through space, with a permadeath mechanic breathing over your neck! Find and install numerous software-perks which will boost your spacecraft. Well, it might not always boost...
-		</p>
-		<p class="centerText">
-		With countless weapons of different types to assemble in your spacecraft, your strategy must change quickly in your deep-space run. And the symbiotic nature of the perks will scale even more the uniqueness of game experience.
-
-		</p>
-		<p class="centerText">
-		Integrating achievements and with it's own "spacencyclopedia", the StellarNet, there will be a lot to collect in the STELLAR INTERFACE's vast universe.
-
-		</p>
-		<p class="centerText">
-		Replay replay and replay the same game with complete different tones each run! What will happen to you, in your own unique apocalyptic cataclysmic transgalactic voyage?
-		</p>
-		<p class="centerText">
-		STELLAR INTERFACE will be soon launched in Early Access, and even sooner in Steam's Greenlight. Stay tuned!
-
-		</p>
-	</div>
-	<div id="news">
-		<span class="newsText">NEWS</span>			
-					
-		<div id="newsText">
-			
-		</div>
-	</div>
-	</div>
 	
+		<p class="question">When will it be released?</p>
+		<p class="answer">The master plan is to release Stellar Interface in the final quarter of 2016. We will have an <b>early access</b> available as soon as we get greenlit.<p>
+		
+		<p class="question">What engine does it use?</p>
+		<p class="answer">Unity.<p>
+		
+		<p class="question">Who is the team behind it?<p>
+		<p class="answer">Right now the team making StellarInterface is composed by two developers, Diogo Cardoso e Miguel Azevedo, and a designer, Rita Malaquias.<p>
+		
+	</div>
 	
 	
 	</section>
+	
+	
+
+	
+
+ 
 	
 	<section id="footer">
 	<p> By Diogo, Miguel and Rita</p>
 	<p>	© ImaginationOverflow 2016</p>
 		
 	</section>
+ 
 	
-		<script>
+	
+	</div>
+	
+				<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -128,6 +122,8 @@
   ga('send', 'pageview');
 
 </script>
+
+
 <script>
 	function registerLogHooks()
 	{
@@ -135,12 +131,13 @@
 		attachClickEvent("#topMenu span > a");
 		attachClickEvent("#socialLinks a");
 		
+		attachClickEvent("#mediaMenuContent span > a");
 		
 		
 		
 	}
 
-function attachClickEvent(selector, extractor,eventNameExtractor)
+	function attachClickEvent(selector, extractor,eventNameExtractor)
 	{
 		$(selector).each(function(idx,elem)
 		{
@@ -170,8 +167,10 @@ function attachClickEvent(selector, extractor,eventNameExtractor)
 	}
 	
 	
+	
+	
 
 </script>
-</div>
-  </body>
-  </html>
+</body>
+
+</html>
