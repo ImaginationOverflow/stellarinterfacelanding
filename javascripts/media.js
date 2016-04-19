@@ -146,6 +146,26 @@ function publishFolder(folder, folderView, nrOfImagesPerRow)
 		}
 	});
 	
+	var isOpen = 0;
+	content.magnificPopup({
+		delegate: 'a', // child items selector, by clicking on it popup will open
+		type: 'image',
+		gallery: 
+		{
+		  enabled: true
+		},
+		callbacks: {
+			
+			change: function(item) 
+			{
+				var item = this.currItem.img[0].alt;
+				logClick(null,  function(){return item;}, function(){return "mediaViewFull";})
+			}
+  }
+  // other options
+});
+	
+	//*/
 	attachClickEvent("."+folder.name+".gridImage" , 
 		function(elem)
 		{
@@ -183,12 +203,13 @@ function createImage(photo, folder, resize, imageWidth)
 	var fullScreenImg = $("<a/>", {"href":photo.url});
 	
 	img.appendTo(fullScreenImg);
-	
+	/*/
 	fullScreenImg.magnificPopup(
 	{
 		type: 'image',
 		closeOnContentClick:true,
-
+		
 	});
+	//*/
 	return fullScreenImg;
 }

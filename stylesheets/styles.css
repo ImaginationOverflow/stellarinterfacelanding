@@ -544,7 +544,7 @@ body {
   background: linear-gradient(#2a2a29, #1c1c1c);
 }
 
-h1, h2, h3, h4, h5, h6 {
+/*h1,*/ h2, h3, h4, h5, h6 {
   color: #e8e8e8;
   margin: 0 0 10px;
   font-family: 'Source Code Pro','OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -555,13 +555,14 @@ p, ul, ol, table, pre, dl {
   margin: 0 0 20px;
 }
 
-h1, h2, h3 {
+/*h1,*/ h2, h3 {
   line-height: 1.1;
 }
 
+/*
 h1 {
   font-size: 28px;
-}
+}*/
 
 h2 {
   font-size: 24px;
@@ -793,13 +794,14 @@ section #title {
   padding: 0 0 5px 0;
   text-align:center;
 }
-section #title h1 {
+
+ section #title h1 {
   font-family: 'Source Code Pro','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 14px;
   text-align: center;
-  line-height: 36px;
-}
+  display:inline;
+} 
 section #title p {
   color: #d7cfbe;
   font-family: 'Source Code Pro','OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1089,3 +1091,6 @@ body {
 	
 	margin-top:-20px;
 }
+
+
+
