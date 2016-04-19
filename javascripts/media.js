@@ -57,7 +57,7 @@ function getFolderImages(folder)
 	
 	
 	
-	var folderView = $("<div>/", {"class":"contentTitle", "id":folder.name, html:folder.name});
+	var folderView = $("<div/>", {"class":"contentTitle", "id":folder.name, html:folder.name});
 		
 	folderView.appendTo("#mediaContent");
 	
@@ -133,6 +133,7 @@ function publishFolder(folder, folderView, nrOfImagesPerRow)
 	
 	
 	content.insertAfter(folderView);
+	
 	//
 	content.masonry(
 	{
@@ -146,7 +147,7 @@ function publishFolder(folder, folderView, nrOfImagesPerRow)
 		}
 	});
 	
-	var isOpen = 0;
+	
 	content.magnificPopup({
 		delegate: 'a', // child items selector, by clicking on it popup will open
 		type: 'image',
@@ -163,7 +164,7 @@ function publishFolder(folder, folderView, nrOfImagesPerRow)
 			}
   }
   // other options
-});
+	});
 	
 	//*/
 	attachClickEvent("."+folder.name+".gridImage" , 
