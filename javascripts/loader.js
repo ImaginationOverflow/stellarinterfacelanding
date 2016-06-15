@@ -50,7 +50,7 @@ function createNews(date, text, link)
 
 function loadNews()
 {
-	var fbLink = "https://graph.facebook.com/v2.5/1674449119468400/posts?fields=full_picture,message,created_time,link&access_token=CAAJftGuZCQDMBAH1N2pMTV9iPxi96ewky2ceg5DqPqTyhgJZAwum4ZCsyp0Sz4UIOL9A6Xlk5NnOGyCed4FWZBKyo6w8K02mSUuudcBmxqtTZB4gZCwKUZCdyvMQ2KQCOmUJHSb7oPM5BjDJSeqc9uUdUaaZAqeF56ZBZA57TEeN7ve6qChP5qvHf3dhuxBFkXlAZAZBZCGZAYGT1WRgZDZD"
+	var fbLink = "https://graph.facebook.com/v2.5/1674449119468400/posts?fields=full_picture,message,created_time,link&access_token=EAAEt1w89jhYBAEprukgLhruo8vwK3CYb6vcjz8FYHjZBgDAIv7S4kZBhRYC3tASu6AZCwPqcAmS9PAUqTTzYdwwpkLkZCgmlY1jmyrWyNvZAyHyXpZBIkZCvrknaJVNHlWbAODaWsdm5tbtZCnTg7C4P2osEv6wa2UrHFrArP9jZBBwZDZD"
 	
 	var maxChars = 200;
 	
