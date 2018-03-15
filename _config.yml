@@ -1,0 +1,4 @@
+theme: jekyll-theme-minimal
+permalink: pretty
+include: [".well-known","presskit"]
+encoding: UTF-8
