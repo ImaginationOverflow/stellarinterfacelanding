@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="stylesheets/styles.css"/>
     <link rel="stylesheet" href="stylesheets/github-dark.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link href="css/imageviewer.css"  rel="stylesheet" type="text/css" />
+
+<script src="js/imageviewer.min.js"></script>
     <script src="javascripts/respond.js"></script>
 	<script src="javascripts/jquery-1.12.2.min.js"></script>
 	<script src="javascripts/loader.js"></script>
@@ -44,7 +47,7 @@
 	 <meta name="description" content="Stellar Interface is a rogue-like, permadeath space shooter with randomized perks, providing the player an unique experience every run!."/>
 	 
 	 <meta name="copyright" content="ImaginationOverflow"/>
-		 <meta name="keywords" content="stellar interface, stellarinterface, game, space shooter, shmup, indie, game, video game, pixel art, videogame, roguelike, rogue, shoot them up, steam, xbox, pc, linux, mac, ps4, arcade"/>
+		 <meta name="keywords" content="stellar interface, stellarinterface, game, space shooter, shmup, indie, game, video game, pixel art, videogame, roguelike, rogue, shoot them up, steam, xbox, pc, linux, mac, ps4, arcade, shump, imaginationoverflow"/>
 	 <meta name="robots" content="index,follow"/>
 	 <meta name="author" content="Diogo Cardoso">
 
@@ -56,7 +59,7 @@
 	<meta property="og:description" content="Stellar Interface is a rogue-like, permadeath space shooter with randomized perks, providing the player an unique experience every run!." />
 	<meta property="og:image" content="http://stellarinterface.com/ms-icon-310x310.png" />
 	<meta property="og:site_name" content="Stellar Interface" />
-	<meta property="og:video" content="https://www.youtube.com/watch?v=EhTHXwVh-Bg" />
+	<meta property="og:video" content="https://www.youtube.com/watch?v=jerTDHpGzSc" />
   </head>
   <body>
      
@@ -70,19 +73,16 @@
         <div id="title" >
         <a href="http://stellarinterface.com/"><img src="images/logo.png" id="logo"></a>
 			<div id="topMenu">
-				<h1><span class="menuTitle"> <a href="https://www.patreon.com/imaginationoverflow/posts?tag=Stellar%20Interface">BLOG</a></span>	</h1>
+				<h1><span class="menuTitle"> <a href="https://www.patreon.com/imaginationoverflow/posts?tag=Stellar%20Interface">DevLog</a></span>	</h1>
 				<h1><span class="menuTitle"> <a href="mailto:stellarinterface@imaginationoverflow.com">Contact</a></span>	</h1>
 				<h1><span class="menuTitle"> <a href="https://stellarinterface.com/presskit/"><b>Press Kit</b></a></span>	</h1>
 				
 			</div>
 			<div class="social" id="socialLinks">
-				<a href="http://store.steampowered.com/app/517330" id="steam"><img src="images/steam.png"/></a>
-				<a href="https://www.youtube.com/channel/UCT3pJJwn-BEyLqH9pNTQCxw" id="youtube"><img src="images/youtube.png"/>    </a>
 				<a href="https://www.facebook.com/stellarinterface" id="facebook"><img src="images/fb.png"/>         </a>
 				<a href="https://twitter.com/stellar_net" id="twitter"><img src="images/twitter.png"/>		</a>
-				<a href="https://plus.google.com/105756639144658056270" id="google+"><img src="images/g+.png"/>         </a>
-				<a href="https://www.reddit.com/r/stellarinterface/" id="reddit"><img src="images/reddit.png"/>         </a>
 				<a href="https://www.patreon.com/imaginationoverflow" id="patreon"><img src="images/Patron.png"/>         </a>
+				<a href="https://discord.gg/72zmQVu" id="patreon"><img src="images/discord.png"/>         </a>
 				
 			
 			</div>
@@ -94,29 +94,59 @@
 	<div id="content">
 	
 	<div id="manPost">
-	<div style="width: 20%; margin: 0 auto;">
-		<a href="http://store.steampowered.com/app/517330/Stellar_Interface/"><img src="images/steamstore.png" width="50" height="50"/></a>
-		<a href="https://www.microsoft.com/store/apps/9P7WRZWT294V">          <img src="images/xboxstore.png"  width="50" height="50"/></a>
+	<div style=" margin: 0 auto;">
+		<div width="50%; background-color:transparent">
+			<a class="mbtn" href="http://store.steampowered.com/app/517330/Stellar_Interface/">
+				<img style="vertical-align:middle" src="images/steamstore.png" width="50" height="50"/> 
+				<span style="font-size:19px;vertical-align:middle">Steam</span>
+			</a>
+			<a class="mbtn"  href="https://www.microsoft.com/store/apps/9P7WRZWT294V/">
+				<img style="vertical-align:middle" src="images/xone.png" width="50" height="50"/> 
+				<span style="font-size:19px;vertical-align:middle">Xbox</span>
+			</a>
+			<a class="mbtn"  href="https://www.nintendo.com/games/detail/stellar-interface-switch/">
+				<img style="vertical-align:middle" src="images/switch.png" width="50" height="50"/> 
+				<span style="font-size:19px;vertical-align:middle">Nintendo Switch</span>
+			</a>
 		</div>
-		<div class="video-container">>
-			<iframe id="trailerVideo"  width="260" height="315" src="https://www.youtube.com/embed/bJAlKI9I1TM?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+		
+		
+		</div>
+		<div class="video-container" style="margin-top:24px">>
+			<iframe id="trailerVideo"  width="260" height="315" src="https://www.youtube.com/embed/jerTDHpGzSc?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 		</div>
 		
 		</div>
 			<p class="centerText">
 		Fight In Ever Changing Space Battles!
 		</p><p class="centerText">
-Run through the universe, discover the numerous perks/consumables and their synergistic effects. Explore the randomly-generated galaxy to find merchants, unlock spacecrafts, collect StellarNetES Cartridges, checkmark your kills of the various galactic overlords. 
+Run through the universe in this rogue-like-ish space-shooter. Discover the numerous perks/consumables and their synergistic effects. Explore the randomly-generated galaxy to find merchants, unlock spacecrafts, collect Cartridges and checkmark your kills of the various galactic overlords.
 </p><p class="centerText">
 And die. A lot! 
 </p>
-	
-		<iframe src="http://store.steampowered.com/widget/517330/" frameborder="0" width="646" height="190"></iframe>
-		<iframe src="http://store.steampowered.com/widget/750151/" frameborder="0" width="646" height="190"></iframe>
-		<iframe src="http://store.steampowered.com/widget/750150/" frameborder="0" width="646" height="190"></iframe>
-				<iframe frameborder="0" src="https://itch.io/embed/73014?border_width=0&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=d50458&amp;border_color=d50458" width="550" height="165"></iframe>
+
+		<div id="image-gallery-1" class="cf" style="margin-bottom:24px">
+    <img style="width:48%" src="presskit/images/15.png" data-high-res-src="presskit/images/6.png" alt="" class="gallery-items">
+    <img style="width:48%" src="presskit/images/6.png" data-high-res-src="presskit/images/6.png" alt="" class="gallery-items">
+    <img style="width:48%" src="presskit/images/3.png" data-high-res-src="presskit/images/6.png" alt="" class="gallery-items">
+    <img style="width:48%" src="presskit/images/2.png" data-high-res-src="presskit/images/6.png" alt="" class="gallery-items">
+    <img style="width:48%" src="presskit/images/14.png" data-high-res-src="presskit/images/6.png" alt="" class="gallery-items">
+    <img style="width:48%" src="presskit/images/12.png" data-high-res-src="presskit/images/6.png" alt="" class="gallery-items">
+   
+</div>
+		
+		<iframe src="http://store.steampowered.com/widget/517330/" frameborder="0" width="100%"  height="190"></iframe>
+		<iframe style="width:100%; margin-top:24px" frameborder="0" src="https://itch.io/embed/73014?border_width=0&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=d50458&amp;border_color=d50458"  height="165"></iframe>
+		<h1 class="menuTitle">DLC</h1>
+		<iframe src="http://store.steampowered.com/widget/750151/" frameborder="0" width="100%" height="190"></iframe>
+		<iframe src="http://store.steampowered.com/widget/750150/" frameborder="0" width="100%" height="190"></iframe>
+				
 		<div>
-		<iframe style="border: 0; width: 586px; height: 706px;" src="https://bandcamp.com/EmbeddedPlayer/album=1316957048/size=large/bgcol=333333/linkcol=d50458/tracklist=false/transparent=true/" seamless><a href="http://imaginationoverflow.bandcamp.com/album/stellar-interface-original-soundtrack">Stellar Interface Original Soundtrack by Stephen Pierce</a></iframe>
+		
+		<h1 class="menuTitle">Original Soundtrack</h1>
+		<iframe style="width:100%; margin-top:24px" src="https://open.spotify.com/embed/album/2P9NQ7nKEsRCB4tQOYvo1f" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+		
+		<iframe style="border: 0; width: 100%; height: 706px; margin-top:24px" src="https://bandcamp.com/EmbeddedPlayer/album=1316957048/size=large/bgcol=333333/linkcol=d50458/tracklist=false/transparent=true/" seamless><a href="http://imaginationoverflow.bandcamp.com/album/stellar-interface-original-soundtrack">Stellar Interface Original Soundtrack by Stephen Pierce</a></iframe>
 		
 	</div>
 	<div id="news">
@@ -133,8 +163,8 @@ And die. A lot!
 	</section>
 	
 	<section id="footer">
-	<p> By Diogo, Miguel and Rita</p>
-	<p>	<a href="http://imaginationoverflow.com">© ImaginationOverflow 2018</a></p>
+	<p> With love by Diogo, Miguel and Rita</p>
+	<p>	<a href="http://imaginationoverflow.com">© ImaginationOverflow 2019</a></p>
 		
 	</section>
 	
@@ -189,7 +219,15 @@ function attachClickEvent(selector, extractor,eventNameExtractor)
 		ga('send', 'event', eventName, name, '');
 	}
 	
-	
+$(function () {
+    var viewer = ImageViewer();
+    $('.gallery-items').click(function () {
+        var imgSrc = this.src,
+            highResolutionImage = $(this).data('high-res-img');
+ 
+        viewer.show(imgSrc, highResolutionImage);
+    });
+});	
 
 </script>
 </div>
